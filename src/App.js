@@ -1,25 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
-
+const TitoloCorso = (props) => {
+  console.log('proprietà' = props);
+  return(
+  <h1>Corso React 2023</h1>
+) 
+}
 function App() {
-  return (
+
+  const corsi =[{
+  'id': 1,
+  'nome': 'React',
+  'anno': '2022',
+  },
+  {
+    'id':2,
+    'nome': 'Flutter',
+    'anno': '2022'
+  },
+  {
+    'id':3,
+    'nome': 'Angular',
+    'anno': '2024'
+  },
+  {
+    'id':4,
+    'nome': 'Vue',
+    'anno': '2023'
+  }]
+  return (  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {corsi.map(() => {
+        return <TitoloCorso nome={corso.nome} anno={corso.anno}/>
+      })
+      }
     </div>
   );
 }
-
 export default App;
